@@ -1,3 +1,31 @@
+# Sección 1: Introducción a Servicios en Quarkus
+
+### ¿Qué es `@ApplicationScoped` en Quarkus?
+`@ApplicationScoped` es una anotación en Quarkus que define un bean que vive durante el ciclo de vida de la aplicación. Esto significa que una única instancia del bean será compartida entre todas las peticiones y usuarios a lo largo de la vida de la aplicación.
+
+### ¿Cómo funciona la inyección de dependencias en Quarkus?
+La inyección de dependencias en Quarkus permite gestionar automáticamente la creación y el ciclo de vida de los objetos, facilitando la reutilización de código y el desacoplamiento de componentes. En Quarkus, esto se logra utilizando anotaciones como `@Inject`, `@ApplicationScoped`, `@Singleton`, entre otras, que indican cómo y cuándo se deben inyectar las dependencias.
+
+### ¿Cuál es la diferencia entre `@ApplicationScoped`, `@RequestScoped`, y `@Singleton` en Quarkus?
+- `@ApplicationScoped`: El bean vive durante todo el ciclo de vida de la aplicación, compartiendo una única instancia entre todas las solicitudes.
+- `@RequestScoped`: El bean se crea para cada solicitud HTTP y se destruye una vez que la solicitud ha sido procesada.
+- `@Singleton`: Similar a `@ApplicationScoped`, pero con la diferencia de que se sigue el ciclo de vida de la JVM en lugar de la aplicación. Es útil para casos donde se necesita asegurarse de que exista solo una instancia en todo el entorno de ejecución.
+
+### ¿Cómo se define un servicio en Quarkus utilizando `@ApplicationScoped`?
+Para definir un servicio en Quarkus utilizando `@ApplicationScoped`, se debe crear una clase de servicio y anotarla con `@ApplicationScoped`. Aquí hay un ejemplo:
+
+```java
+import javax.enterprise.context.ApplicationScoped;
+
+@ApplicationScoped
+public class MyService {
+    public String performAction() {
+        return "Action performed!";
+    }
+}
+
+
+
 # presupuesto-mensual
 
 This project uses Quarkus, the Supersonic Subatomic Java Framework.
