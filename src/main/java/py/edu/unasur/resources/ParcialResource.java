@@ -10,6 +10,14 @@ import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
 import py.edu.unasur.models.resutls.ResultadoEncontrarValores;
 
+/*
+ *  Temario de paracial de prueba
+ * Crear un recurso REST de tipo GET que reciba como parametros 2 numeros y retorne la suma de ambos
+ *   GET
+ *   /parcial/suma/{numero1}/{numero2}
+ *   Dada la siguiente lista [12,31,1,2,31,1,123] encontrar el valor del menor, el mayor y el promedio de numero;
+ * 
+ */
 @Path("/parcial") // /parcial
 public class ParcialResource {
     @GET
