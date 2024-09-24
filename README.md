@@ -1,4 +1,4 @@
-# Tareas
+# Tareas entregada
 
 [Tarea 2](tarea2.md)
 
