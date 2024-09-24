@@ -11,6 +11,7 @@ import jakarta.ws.rs.PathParam;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
 import py.edu.unasur.models.params.PostConBodyParam;
+import py.edu.unasur.models.params.TestParam;
 import py.edu.unasur.models.resutls.Respuesta;
 import py.edu.unasur.models.resutls.TestResult;
 
@@ -23,9 +24,13 @@ public class RecursosBasicos {
     }
 
     @POST
-    @Produces(MediaType.TEXT_PLAIN)
-    public String primerPost() {
-        return "Primer post";
+    @Produces(MediaType.APPLICATION_JSON)
+    public void primerPost() {
+        TestParam result = new TestParam();
+        result.setCodigo("100");
+        result.setDescripcion("Es una prueba");
+        result.setIdentificadorUnico("uuid-123123-1231-1");
+      //  return result;
     }
 
     @DELETE

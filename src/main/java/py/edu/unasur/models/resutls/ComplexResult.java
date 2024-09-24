@@ -1,6 +1,4 @@
-package main.java.py.edu.unasur.models.resutls;
-
-import py.edu.unasur.models.resutls.TestResult;
+package py.edu.unasur.models.resutls;
 
 public class ComplexResult {
     Double latitud;
