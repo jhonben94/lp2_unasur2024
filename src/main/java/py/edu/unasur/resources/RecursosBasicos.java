@@ -25,12 +25,12 @@ public class RecursosBasicos {
 
     @POST
     @Produces(MediaType.APPLICATION_JSON)
-    public void primerPost() {
+    public TestParam primerPost() {
         TestParam result = new TestParam();
         result.setCodigo("100");
         result.setDescripcion("Es una prueba");
         result.setIdentificadorUnico("uuid-123123-1231-1");
-      //  return result;
+        return result;
     }
 
     @DELETE
