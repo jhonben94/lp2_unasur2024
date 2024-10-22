@@ -6,6 +6,8 @@
 
 [Tarea 4](tarea4.md)
 
+[Tarea 6](tarea6.md)
+
 # Notas 
 [Notas y ejemplos](tarea2.md)
 # presupuesto-mensual
