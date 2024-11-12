@@ -1,6 +1,9 @@
 package py.edu.unasur.models;
 
 import java.util.Date;
+import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -8,6 +11,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "presupuestos", schema = "public")
@@ -32,6 +36,10 @@ public class Presupuestos {
 
     @Column(name = "descripcion", nullable = false)
     private String descripcion;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "presupuesto", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Gasto> gastos;
 
     /*
      * @OneToMany(mappedBy = "presupuesto", cascade = CascadeType.ALL, fetch =
@@ -86,6 +94,14 @@ public class Presupuestos {
 
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
+    }
+
+    public List<Gasto> getGastos() {
+        return gastos;
+    }
+
+    public void setGastos(List<Gasto> gastos) {
+        this.gastos = gastos;
     }
 
     /*
